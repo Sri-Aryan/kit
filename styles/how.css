@@ -1,0 +1,43 @@
+/* How it works: steps, score formula, gauge */
+
+.steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg2); box-shadow: var(--sh-sm); overflow: hidden; }
+.step { padding: 22px 18px 24px; border-left: 1px solid var(--line2); position: relative; }
+.step:first-child { border-left: 0; }
+.step .n { font-family: var(--font-mono); font-size: 12px; color: var(--faint); }
+.step h4 { margin: 10px 0 6px; font-size: 16px; font-weight: 600; }
+.step p { margin: 0; font-size: 14px; color: var(--dim); }
+.step code { font-size: 12px; background: var(--panel); padding: 1px 5px; border-radius: 5px; color: var(--text); word-break: break-all; }
+
+.score { margin-top: 14px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 14px; }
+.formula {
+  background: var(--term-bg); color: #e9e9ec; border-radius: var(--radius); padding: 26px;
+  border: 1px solid var(--term-line); box-shadow: var(--sh-md);
+  display: flex; flex-direction: column; justify-content: center;
+}
+.formula .lbl { font-family: var(--font-mono); font-size: 12px; color: #77777f; text-transform: uppercase; letter-spacing: .08em; }
+.formula .eq { font-family: var(--font-mono); font-size: clamp(15px, 2.2vw, 19px); margin-top: 12px; line-height: 1.7; }
+.formula .eq .c { color: #ff6b52; } .formula .eq .h { color: #ff9d6c; } .formula .eq .m { color: #f1c35c; } .formula .eq .l { color: #84aaff; }
+.formula .note { margin-top: 14px; font-size: 13.5px; color: #a3a3ab; font-family: var(--font-body); }
+
+.gauge-card { display: flex; align-items: center; gap: 22px; }
+.gauge { position: relative; width: 120px; height: 120px; flex: none; }
+.gauge svg { width: 120px; height: 120px; transform: rotate(-90deg); }
+.gauge .arc { transition: stroke-dashoffset 1.4s var(--ease); }
+.gauge .val { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-display); font-size: 40px; }
+.sev-list { list-style: none; margin: 0; padding: 0; font-size: 14px; flex: 1; }
+.sev-list li { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px dashed var(--line); }
+.sev-list li:last-child { border-bottom: 0; }
+.sev { display: inline-flex; align-items: center; gap: 8px; }
+.sev i { width: 8px; height: 8px; border-radius: 2px; }
+.sev-list b { font-family: var(--font-mono); font-weight: 500; }
+
+@media (max-width: 900px) {
+  .steps { grid-template-columns: 1fr; }
+  .step { border-left: 0; border-top: 1px solid var(--line2); }
+  .step:first-child { border-top: 0; }
+  .score { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .gauge-card { flex-direction: column; align-items: stretch; }
+  .gauge { margin: 0 auto; }
+}

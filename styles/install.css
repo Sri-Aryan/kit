@@ -1,0 +1,30 @@
+/* Install: code blocks, folder table, requirements, CLI table */
+
+.install { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.code-block {
+  position: relative; background: var(--term-bg); color: #e9e9ec; border: 1px solid var(--term-line);
+  border-radius: 12px; padding: 16px 18px; font-family: var(--font-mono); font-size: 13px; line-height: 1.7;
+  overflow-x: auto; margin: 14px 0 0; white-space: pre;
+}
+.code-block .p { color: #6ee7a0; } .code-block .cm { color: #77777f; }
+.code-block .copy-btn { position: absolute; top: 10px; right: 10px; }
+.code-block:has(.copy-btn) { padding-right: 96px; }
+.table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 14px; }
+.table th { text-align: left; font-weight: 500; font-size: 12.5px; color: var(--faint); padding: 8px 0; border-bottom: 1px solid var(--line); }
+.table td { padding: 10px 0; border-bottom: 1px solid var(--line2); vertical-align: top; }
+.table td:first-child { font-family: var(--font-mono); font-size: 13px; padding-right: 16px; white-space: nowrap; }
+.table tr:last-child td { border-bottom: 0; }
+.table a { text-decoration: underline; }
+.req { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.req span { font-size: 12.5px; padding: 5px 10px; border-radius: 999px; background: var(--panel); color: var(--dim); }
+.req span b { color: var(--text); font-weight: 500; }
+
+.cli { margin-top: 14px; }
+.cli .table td:first-child { white-space: normal; }
+.cli .table td:first-child code { white-space: nowrap; }
+.cli .table td small { color: var(--faint); font-family: var(--font-mono); font-size: 12px; }
+.cli .hint { margin-top: 12px; font-size: 13px; }
+
+@media (max-width: 900px) {
+  .install { grid-template-columns: 1fr; }
+}

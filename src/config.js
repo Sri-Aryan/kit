@@ -7,4 +7,4 @@ export const GITHUB_URL = "https://github.com/getsecuritykit/kit";
 
 // Polar checkout link: Polar dashboard → Products → Checkout Links (looks like https://buy.polar.sh/polar_cl_...).
 // Also add this site's domain under Settings → Preferences → Embedding, or the overlay is blocked.
-export const POLAR_CHECKOUT_URL = "";
+export const POLAR_CHECKOUT_URL = "https://buy.polar.sh/polar_cl_yvkl3IbnSgaPoKSLH0gOStDSmiWeLBl47Bj1G3cjtjf";
